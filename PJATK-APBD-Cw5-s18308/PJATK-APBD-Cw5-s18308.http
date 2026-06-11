@@ -1,0 +1,82 @@
+@PJATK_APBD_Cw5_s18308_HostAddress = http://localhost:5027
+
+### GET 200
+GET {{PJATK_APBD_Cw5_s18308_HostAddress}}/api/patients
+
+### GET 200
+GET {{PJATK_APBD_Cw5_s18308_HostAddress}}/api/patients?search=an
+
+### POST 201
+POST {{PJATK_APBD_Cw5_s18308_HostAddress}}/api/patients/90010112345/bedassignments
+Content-Type: application/json
+
+{
+  "from": "2026-07-20T14:00:00",
+  "to": "2026-07-30T10:00:00",
+  "bedType": "Standard",
+  "ward": "Kardiologia"
+}
+
+### POST 201
+POST {{PJATK_APBD_Cw5_s18308_HostAddress}}/api/patients/68111122233/bedassignments
+Content-Type: application/json
+
+{
+  "from": "2026-09-01T09:00:00",
+  "bedType": "Elektryczne",
+  "ward": "Neurologia"
+}
+
+### POST 404
+POST {{PJATK_APBD_Cw5_s18308_HostAddress}}/api/patients/00000000000/bedassignments
+Content-Type: application/json
+
+{
+  "from": "2026-07-20T14:00:00",
+  "to": "2026-07-30T10:00:00",
+  "bedType": "Standard",
+  "ward": "Kardiologia"
+}
+
+### POST 404
+POST {{PJATK_APBD_Cw5_s18308_HostAddress}}/api/patients/90010112345/bedassignments
+Content-Type: application/json
+
+{
+  "from": "2026-07-20T14:00:00",
+  "to": "2026-07-30T10:00:00",
+  "bedType": "Standard",
+  "ward": "ABC"
+}
+
+### POST 404
+POST {{PJATK_APBD_Cw5_s18308_HostAddress}}/api/patients/90010112345/bedassignments
+Content-Type: application/json
+
+{
+  "from": "2026-07-20T14:00:00",
+  "to": "2026-07-30T10:00:00",
+  "bedType": "XYZ",
+  "ward": "Kardiologia"
+}
+
+### POST 404
+POST {{PJATK_APBD_Cw5_s18308_HostAddress}}/api/patients/85050567890/bedassignments
+Content-Type: application/json
+
+{
+  "from": "2026-07-20T14:00:00",
+  "to": "2026-07-30T10:00:00",
+  "bedType": "Standard",
+  "ward": "Chirurgia"
+}
+
+### POST 404
+POST {{PJATK_APBD_Cw5_s18308_HostAddress}}/api/patients/85050567890/bedassignments
+Content-Type: application/json
+
+{
+  "from": "2026-05-10T09:00:00",
+  "bedType": "Intensywna terapia",
+  "ward": "Chirurgia"
+}
